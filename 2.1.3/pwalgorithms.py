@@ -26,9 +26,11 @@ def one_word(password):
 def two_words(password):
     words = get_dictionary()
     guesses = 0
-    for w in words:
+    # get each word from the dictionary file
+    for w1 in words:
         for w2 in words:
+            phrase = w1 + w2
             guesses += 1
-            if w + w2 == password:
+            if phrase == password:
                 return True, guesses
         return False, guesses
